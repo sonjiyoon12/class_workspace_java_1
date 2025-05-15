@@ -14,13 +14,13 @@ public class JDBCExample2 {
         Statement stmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("MySQL 데이터베이스에 연결되었습니다.");
             stmt = conn.createStatement();
             rs = stmt.executeQuery("select * from tb_grade");
 
-            while(rs.next()){
+            while (rs.next()) {
                 String grade = rs.getNString("grade");
                 int score = rs.getInt("score");
                 System.out.print("grade : " + grade + "\t");
@@ -29,13 +29,13 @@ public class JDBCExample2 {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
 
             try {
                 rs.close();
                 stmt.close();
                 conn.close();
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 System.out.println("자원 해제 중 오류 발생 : " + e.getMessage());
             }
         }

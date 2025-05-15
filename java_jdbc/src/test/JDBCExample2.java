@@ -2,7 +2,7 @@ package test;
 
 import java.sql.*;
 
-public class JDBCExample3 {
+public class JDBCExample2 {
 
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/employees?serverTimezone=Asia/Seoul";
