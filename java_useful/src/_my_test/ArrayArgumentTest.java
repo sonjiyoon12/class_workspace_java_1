@@ -4,7 +4,6 @@ public class ArrayArgumentTest {
 
     public static double minArray(double[] list) {
         double min = list[0];
-
         for (int i = 0; i < list.length; i++) {
             if (list[i] < min)
                 min = list[i];
