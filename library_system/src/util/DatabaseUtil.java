@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  * @author 손지윤
- * 데이터베이스 연결을 관리하는 유틸리티 클래스
+ * 데이터베이스 연결을 관리하는 유틸리티 클래스.
  */
 public class DatabaseUtil {
 
