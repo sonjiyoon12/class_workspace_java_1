@@ -26,9 +26,6 @@ public class ServerFile03 {
         try {
             serverSocket = new ServerSocket(5000);
 
-            OutputStreamWriter writer1 = new OutputStreamWriter(System.out);
-
-
             // 클라이언트 연결 대기
             Socket clientSocket = serverSocket.accept();
             System.out.println(">>> 클라이언트가 연결 했습니다 <<<");
@@ -50,6 +47,10 @@ public class ServerFile03 {
             // 데이터 수신해보기
             String message;
             while ((message = reader.readLine()) != null){
+//                if("exit".equalsIgnoreCase(message)){
+//                    System.out.println("클라이언트가 채팅을 종료했습니다.");
+//                    break;
+//                }
                 System.out.println("클라이언트에게 온 메세지 : " + message);
             }
 

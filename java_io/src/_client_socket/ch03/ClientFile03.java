@@ -30,22 +30,27 @@ public class ClientFile03 {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
             // writer 데이터를 보낼 수 있음
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("텍스트를 입력하세요");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             // reader 통해서 데이터를 읽을 수 있음
 
             // 실행의 흐름 - 응용..
-            int txt;
-            while((txt = reader.read()) != -1){
-                writer.println(socket.getInputStream());
-            }
-
             writer.write("안녕 서버야 !!\n");
             writer.flush(); // 물을 내리다
 
             // 서버로 부터 데이터를 응답 받아 보자.
             String responseStr = reader.readLine();
             System.out.println("서버에서 온 메세지 : " + responseStr);
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            PrintWriter pw = new PrintWriter(socket.getOutputStream(),true);
+
+            System.out.println("메세지 입력하세요");
+
+            String line;
+            while ((line = br.readLine()) != null && !line.isEmpty()){
+                pw.write(line +'\n');
+                pw.flush();
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
