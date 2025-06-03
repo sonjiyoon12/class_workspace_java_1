@@ -41,16 +41,18 @@ public class ServerFile03 {
             // writer <-- 데이터를 클라이언트로 마구 보낼 수 있다.
 
             // 데이터 송신해보기
+
             writer.println("난 서버야, client 반가워");
             writer.flush();
 
             // 데이터 수신해보기
             String message;
+
             while ((message = reader.readLine()) != null){
-//                if("exit".equalsIgnoreCase(message)){
-//                    System.out.println("클라이언트가 채팅을 종료했습니다.");
-//                    break;
-//                }
+                if("exit".equalsIgnoreCase(message)){
+                    System.out.println("클라이언트가 채팅을 종료했습니다.");
+                    break;
+                }
                 System.out.println("클라이언트에게 온 메세지 : " + message);
             }
 

@@ -22,10 +22,10 @@ public class ClientFile02 {
 
         Socket socket = null;
         try {
-            socket = new Socket("localhost",5000);
+            socket = new Socket("localhost", 5000);
 
             // 서버로 메세지를 보내기 위한 출력 스트림 필요하다.
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
+            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             // writer 데이터를 보낼 수 있음
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -41,8 +41,8 @@ public class ClientFile02 {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(socket != null){
+        } finally {
+            if (socket != null) {
                 try {
                     socket.close();
                 } catch (IOException e) {
@@ -51,6 +51,5 @@ public class ClientFile02 {
                 }
             }
         }
-
     }
 }

@@ -27,23 +27,22 @@ public class ClientFile03 {
             socket = new Socket("localhost",5000);
 
             // 서버로 메세지를 보내기 위한 출력 스트림 필요하다.
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
+           // PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
             // writer 데이터를 보낼 수 있음
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+           // BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             // reader 통해서 데이터를 읽을 수 있음
 
             // 실행의 흐름 - 응용..
-            writer.write("안녕 서버야 !!\n");
-            writer.flush(); // 물을 내리다
+            //writer.write("안녕 서버야 !!\n");
+           // writer.flush(); // 물을 내리다
 
             // 서버로 부터 데이터를 응답 받아 보자.
-            String responseStr = reader.readLine();
-            System.out.println("서버에서 온 메세지 : " + responseStr);
+            //String responseStr = reader.readLine();
+            //System.out.println("서버에서 온 메세지 : " + responseStr);
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             PrintWriter pw = new PrintWriter(socket.getOutputStream(),true);
-
             System.out.println("메세지 입력하세요");
 
             String line;

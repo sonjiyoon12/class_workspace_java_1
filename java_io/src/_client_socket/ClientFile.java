@@ -19,19 +19,19 @@ public class ClientFile {
         // 만약 내 컴퓨터에 접근 하고 싶다면 localhost 도 사용 가능하다.
         Socket socket = null;
         try {
-             new Socket("localhost", 5000);
+            new Socket("localhost", 5000);
 
             // 서버로 데이터를 보내기 위한 준비물이 필요 하다.
             // 출력 스트림이 필요하다 (문자)
 
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
+            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             writer.println("Hello, Server ~~~!!!!");
             writer.flush(); // 물을 내리다
 
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }finally {
-            if(socket !=null){
+        } finally {
+            if (socket != null) {
                 try {
                     socket.close();
                 } catch (IOException e) {
