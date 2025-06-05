@@ -49,7 +49,7 @@ public class MultiNClient {
         });
     }
 
-    // 키보드에서 입력을 바아 서버로 메세지를 전송하는 행위
+    // 키보드에서 입력을 받아 서버로 메세지를 전송하는 행위
     private Thread createWriteThread() {
         return new Thread(new Runnable() {
             @Override
